@@ -4,10 +4,10 @@ import Modal from "../ui/Modal";
 import axios from "axios";
 
 const ProductSection = ({ products, categories }) => {
-/*
-    console.log("productos", products);
-    console.log("categorías", categories);
-*/
+    /*
+        console.log("productos", products);
+        console.log("categorías", categories);
+    */
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isOpen, setIsOpen] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState("");
@@ -46,7 +46,7 @@ const ProductSection = ({ products, categories }) => {
 
                 <div className="flex flex-col">
                     <label className="p-2 text-lg font-bold rounded-t-lg text-stone-950 bg-beige-300">
-                       Elegir Categoría
+                        Elegir Categoría
                     </label>
                     <select
                         className="p-2 rounded-b-2xl text-beige-200 bg-stone-950"
@@ -60,7 +60,7 @@ const ProductSection = ({ products, categories }) => {
                             </option>
                         ))}
                     </select>
-                   
+
                 </div>
             </div>
 

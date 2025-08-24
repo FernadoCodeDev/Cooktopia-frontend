@@ -18,18 +18,27 @@ const UpdateForm = ({ categories, product }) => {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, files } = e.target;
+    if (type === 'file') {
+      setFormData({
+        ...formData,
+        [name]: files[0]
+      });
+    } else {
+      setFormData({
+        ...formData,
+        [name]: value
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Producto actualizado (simulado):", formData);
-
-    alert(`Producto ${formData.name} actualizado (en memoria, no en JSON real)`);
+    console.log(`El Producto ${formData.name} se ha actualizado :)`, formData);
+    //alert(`El Producto ${formData.name} se ha actualizado :)`);
+    toast.success(`El Producto ${formData.name} se ha actualizado :)`);
   };
-
 
   return (
     <div className="flex flex-col gap-4 p-4 m-auto bg-beige-200 text-beige-950 dark:text-beige-200 dark:bg-neutral-900">
@@ -38,6 +47,34 @@ const UpdateForm = ({ categories, product }) => {
       </h1>
 
       <div className="flex flex-col gap-4 w-full m-auto max-w-[60rem]">
+
+        <details className="p-4 bg-white border rounded-lg shadow ">
+          <summary className="text-lg font-semibold cursor-pointer text-neutral-800">
+            Editar Categoría
+          </summary>
+
+          <form className="flex flex-col gap-4 mt-4">
+
+            <div className="text-neutral-500">
+              <label className="block text-sm font-medium text-neutral-950">
+                Nombre
+              </label>
+              <input
+                type="text"
+                placeholder="Ej. Sartenes"
+                className="w-full p-2 mt-1 border rounded-lg focus:ring focus:ring-neutral-300"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="px-4 py-2 text-white transition rounded-lg bg-neutral-800 hover:bg-neutral-950"
+            >
+              Guardar Categoría
+            </button>
+          </form>
+        </details>
+
         <details className="p-4 bg-white border rounded-lg shadow ">
           <summary className="text-lg font-semibold cursor-pointer text-neutral-800">
             Actualizar Producto
@@ -64,10 +101,10 @@ const UpdateForm = ({ categories, product }) => {
                 type="text"
                 name="name"
                 value={formData.name}
-              
+                onChange={handleChange}
                 placeholder="Sartén Antiadherente"
                 className="w-full p-2 mt-1 border rounded-lg"
-              /> 
+              />
             </div>
 
             <div className="text-neutral-500">
@@ -77,11 +114,11 @@ const UpdateForm = ({ categories, product }) => {
               <textarea
                 name="description"
                 value={formData.description}
-             
+                onChange={handleChange}
                 placeholder="Descripción del producto"
                 className="w-full p-2 mt-1 border rounded-lg"
                 rows="3"
-              ></textarea> 
+              ></textarea>
             </div>
 
             <div className="text-neutral-500">
@@ -93,10 +130,10 @@ const UpdateForm = ({ categories, product }) => {
                 name="price"
                 step="0.01"
                 value={formData.price}
-            
+                onChange={handleChange}
                 placeholder="0.00"
                 className="w-full p-2 mt-1 border rounded-lg focus:ring focus:ring-beige-300"
-              /> 
+              />
             </div>
 
             <div className="text-neutral-500">
@@ -104,7 +141,7 @@ const UpdateForm = ({ categories, product }) => {
               <select
                 name="categories_id"
                 value={formData.categories_id}
-            
+                onChange={handleChange}
                 className="w-full p-2 mt-1 border rounded-lg text-neutral-500"
               >
                 <option value="">Selecciona una categoría</option>
@@ -112,7 +149,7 @@ const UpdateForm = ({ categories, product }) => {
                   <option key={category.id} value={category.id}>{category.name}</option>
                 ))}
               </select>
-        
+
             </div>
 
             <div className="text-neutral-500">
@@ -122,14 +159,14 @@ const UpdateForm = ({ categories, product }) => {
               <select
                 name="status"
                 value={formData.status}
-        
+                onChange={handleChange}
                 className="w-full p-2 mt-1 border rounded-lg"
               >
                 <option value="normal">Normal</option>
                 <option value="new">Nuevo</option>
                 <option value="offer">Oferta</option>
               </select>
-            
+
             </div>
 
             <div className="text-neutral-500">
@@ -139,17 +176,17 @@ const UpdateForm = ({ categories, product }) => {
               <input
                 type="file"
                 name="image"
-    
+
                 className="w-full p-2 mt-1 border rounded-lg"
-              /> 
+              />
             </div>
 
             <button
               type="submit"
-
+       
               className="px-4 py-2 text-white transition rounded-lg bg-neutral-800 hover:bg-neutral-950"
             >
-              Actulizar
+              Actualizar
             </button>
           </form>
         </details>

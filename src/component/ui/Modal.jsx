@@ -87,7 +87,7 @@ export default function Modal({ isOpen, onClose, product }) {
               </div>
             </div>
             <div className="flex flex-row gap-1">
-              <EditButton product={product} onClick={Edit} />
+              <EditButton product={product} onClick={onClose} />
               <DeleteButton product={product} onClick={Delete} />
             </div>
           </div>
