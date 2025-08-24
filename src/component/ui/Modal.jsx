@@ -51,7 +51,7 @@ export default function Modal({ isOpen, onClose, product }) {
               {product.status}
             </h2>
             <img
-              src={`/storage/${product.image}`}
+              src={`/image/${product.image}`}
               alt={product.name}
               className="w-full h-auto m-auto max-w-64"
             />

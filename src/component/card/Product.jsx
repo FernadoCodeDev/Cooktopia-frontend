@@ -32,7 +32,7 @@ function Product({ products = [], onProductClick }) {
 
             {/* Image */}
             <img
-              src={`/storage/${product.image}`}
+              src={`/image/${product.image}`}
               alt={product.name}
               className="w-full h-auto drop-shadow-2xl"
             />
