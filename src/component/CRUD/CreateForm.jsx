@@ -1,43 +1,52 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from '@inertiajs/react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CreateForm = ({ categories }) => {
-
-  const { data, setData, post, processing, errors } = useForm({
-    name: '',
-    description: '',
-    price: '',
-    categories_id: '',
-    status: 'normal',
+  const [products, setProducts] = useState([]);
+  const [formData, setFormData] = useState({
+    name: "",
+    description: "",
+    price: "",
+    categories_id: "",
+    status: "normal",
     image: null,
   });
 
-  const Submit = (e) => {
-    e.preventDefault();
-    post('/products', {
-      forceFormData: true,
-      onSuccess: () => {
-        toast.success('Producto Agregado :)');
-        setTimeout(() => {
-          window.location.reload(); // reload
-        }, 5000);
-      },
-      onError: (err) => {
-        console.error(err);
-        toast.error('Error al agregar producto :(');
-      }
-    });
-  };
-
   const changes = (e) => {
-    const { name, value } = e.target;
-    setData(name, value);
+    const { name, value, type, files } = e.target;
+    if (type === "file") {
+      setFormData({ ...formData, [name]: files[0] });
+    } else {
+      setFormData({ ...formData, [name]: value });
+    }
   };
 
-  const ImageChange = (e) => {
-    setData('image', e.target.files[0]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!formData.name || !formData.price || !formData.categories_id) {
+      toast.error("Completa todos los campos obligatorios");
+      return;
+    }
+
+    const newProduct = {
+      id: products.length + 1,
+      ...formData,
+    };
+    setProducts([...products, newProduct]);
+
+    toast.success(`Producto "${formData.name}" agregado :)`);
+
+    setFormData({
+      name: "",
+      description: "",
+      price: "",
+      categories_id: "",
+      status: "normal",
+      image: null,
+    });
   };
 
   return (
@@ -80,7 +89,7 @@ const CreateForm = ({ categories }) => {
             Crear Nuevo Producto
           </summary>
 
-          <form onSubmit={Submit} className="flex flex-col gap-4 mt-4" encType="multipart/form-data">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4 mt-4" encType="multipart/form-data">
 
             <div className="text-neutral-500">
               <label className="block text-sm font-medium text-neutral-950">
@@ -89,11 +98,11 @@ const CreateForm = ({ categories }) => {
               <input
                 type="text"
                 name="name"
-                value={data.name}
+                value={formData.name}
                 onChange={changes}
                 placeholder="Sartén Antiadherente"
                 className="w-full p-2 mt-1 border rounded-lg "
-              /> {errors.name && <div className="text-red-900">{errors.name}</div>}
+              />
             </div>
 
             <div className="text-neutral-500">
@@ -102,12 +111,14 @@ const CreateForm = ({ categories }) => {
               </label>
               <textarea
                 name="description"
-                value={data.description}
+
+                value={formData.description}
                 onChange={changes}
+
                 placeholder="Descripción del producto"
                 className="w-full p-2 mt-1 border rounded-lg "
                 rows="3"
-              ></textarea> {errors.description && <div className="text-red-900">{errors.description}</div>}
+              ></textarea>
             </div>
 
             <div className="text-neutral-500">
@@ -118,28 +129,30 @@ const CreateForm = ({ categories }) => {
                 type="number"
                 name="price"
                 step="0.01"
-                value={data.price}
+                value={formData.price}
                 onChange={changes}
                 placeholder="0.00"
                 className="w-full p-2 mt-1 border rounded-lg focus:ring focus:ring-beige-300"
-              />  {errors.price && <div className="text-red-900">{errors.price}</div>}
+              />
             </div>
 
             <div className="text-neutral-500">
               <label className="block text-sm font-medium text-neutral-950">Categoría</label>
               <select
                 name="categories_id"
-                value={data.categories_id}
+                value={formData.categories_id}
                 onChange={changes}
                 className="w-full p-2 mt-1 border rounded-lg text-neutral-500"
               >
                 <option value="">Selecciona una categoría</option>
+                <option value="Cuchillos y Accesorios de Corte">Cuchillos y Accesorios de Corte</option>
+                <option value="Utensilios de Cocina">Utensilios de Cocina</option>
+                <option value="Sartenes y Ollas">Sartenes y Ollas</option>
+                <option value="Electrodomésticos">Electrodomésticos</option>
+                <option value="Horneado y Repostería">Horneado y Repostería</option>
+                <option value="Accesorios de Cocina">Accesorios de Cocina</option>
 
-                {categories.map((category) => (
-                  <option key={category.id} value={category.id}>{category.name}</option>
-                ))}
               </select>
-              {errors.categories_id && <div className="text-red-500">{errors.categories_id}</div>}
             </div>
 
             <div className="text-neutral-500">
@@ -148,14 +161,14 @@ const CreateForm = ({ categories }) => {
               </label>
               <select
                 name="status"
-                value={data.status}
+                value={formData.status}
                 onChange={changes}
                 className="w-full p-2 mt-1 border rounded-lg ">
                 <option value="normal">Normal</option>
                 <option value="new">Nuevo</option>
                 <option value="offer">Oferta</option>
               </select>
-              {errors.status && <div className="text-red-500">{errors.status}</div>}
+
             </div>
 
             <div className="text-neutral-500">
@@ -165,17 +178,15 @@ const CreateForm = ({ categories }) => {
               <input
                 type="file"
                 name="image"
-                onChange={ImageChange}
                 className="w-full p-2 mt-1 border rounded-lg"
-              /> {errors.image && <div className="text-red-500">{errors.image}</div>}
+              />
             </div>
 
             <button
               type="submit"
-              disabled={processing}
               className="px-4 py-2 text-white transition rounded-lg bg-neutral-800 hover:bg-neutral-950"
             >
-              {processing ? 'Se esta guardando' : 'Guardar Producto'}
+              Guardar Producto
             </button>
           </form>
         </details>

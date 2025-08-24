@@ -25,7 +25,7 @@ const Header = () => {
                         </div>
                     </div>
 
-                    <div className="flex mx-auto">
+                    <div className="flex flex-col mx-auto">
                         <MobileMenu
                             textColor="text-beige-100 transition-all duration-900 ease-out"
                             hoverColor="hover:text-white"
@@ -54,7 +54,6 @@ const Header = () => {
                 </div>
             </div>
 
-
             {/* design greater than md */}
             <div className="hidden md:grid md:grid-cols-2 md:min-h-screen">
                 {/* left side bg-beige-200 */}
@@ -66,12 +65,14 @@ const Header = () => {
                             alt="CooktopiaShopLogo"
                             className="w-40 h-auto cursor-pointer invert"
                         />
+
                         <MobileMenu
                             textColor="text-beige-950 transition-all duration-900 ease-out"
                             hoverColor="hover:text-stone-950"
                             bgColor="hover:bg-beige-100 transition-all duration-900 ease-out rounded-lg"
                             invertColor="invert-0"
                         />
+
                     </div>
                     <div className="grid grid-cols-2 gap-1 max-w-[25rem]">
 

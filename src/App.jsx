@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -28,7 +27,7 @@ const App = () => {
       />
       <Routes>
         <Route path="/" element={<Home products={products} categories={categories} />} />
-        <Route path="/CreatePage" element={<CreatePage />} />
+        <Route path="/CreatePage" element={<CreatePage products={products} categories={categories}  />} />
         <Route path="/UpdatePage/:id/edit" element={<UpdatePage />} />
       </Routes>
     </div>

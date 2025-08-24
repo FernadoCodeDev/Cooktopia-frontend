@@ -40,25 +40,31 @@ const MobileMenu = ({
       <nav
         className={`w-full text-center transition-all duration-500 ease-in-out overflow-hidden 
         ${menuOpen ? "max-h-[200px] opacity-100" : "max-h-0 opacity-0"} 
-        ${isMobile ? "flex flex-col" : "flex flex-row max-h-none opacity-100"}`}
+        ${isMobile ? "flex flex-col" : "flex flex-col max-h-none opacity-100"}`}
       >
         <a
           href="/"
           className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
-          Home
+          Inicio
         </a>
         <a
           href="/"
           className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
-          Contact
+          Productos
         </a>
         <a
           href="/"
           className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
-          Us
+          Categorías
+        </a>
+        <a
+          href="/"
+          className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
+        >
+          Contacto
         </a>
       </nav>
     </div>
