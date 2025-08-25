@@ -16,7 +16,6 @@ Este repositorio corresponde a la versión **frontend estática**, donde los dat
 
 </div>  
 
-
 ### Funcionalidades Principales
 
 - **Listado de productos:** se muestran los productos de manera estática desde JSON.
@@ -31,7 +30,7 @@ Este repositorio corresponde a la versión **frontend estática**, donde los dat
 
 - `/  Página de inicio.`
 - `/CreatePage` Página de creación de nuevos productos.
--`/products/{id}/edit`  Página de actualización de productos.
+- `/products/{id}/edit` Página de actualización de productos.
 
 Esta versión permite visualizar y probar todas las funcionalidades del proyecto **COOKTOPIA SHOP** de forma estática, replicando la experiencia del proyecto con backend, aunque los cambios no se persisten después de recargar la página.
 
@@ -44,6 +43,7 @@ Cabe destacar que existe otra versión del proyecto que **incluye backend comple
 [![CooktopiaShop-Backend-Repositorio](https://img.shields.io/static/v1?message=Cooktopia-Shop-Backend-Repositorio&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge)](https://github.com/FernadoCodeDev/Cooktopia-Backend)
 
 Esta experiencia permite comprender el flujo completo de un E-commerce, desde la interacción del frontend hasta la gestión real de datos en el backend, ofreciendo una visión clara y práctica del desarrollo de **COOKTOPIA SHOP**.
+
 
 
 
