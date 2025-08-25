@@ -4,11 +4,14 @@ import Info from "../component/Sections/Info";
 import CategoryCards from "../component/Sections/CategoryCards";
 import axios from "axios";
 
-const Main = ({ products, categories }) => {
+const Main = ({ products, categories, onDelete }) => {
   return (
     <main>
       <section>
-        <ProductSection products={products} categories={categories}/> 
+        <ProductSection 
+        products={products} 
+        categories={categories} 
+        onDelete={onDelete} />
         <Info />
         <CategoryCards />
       </section>

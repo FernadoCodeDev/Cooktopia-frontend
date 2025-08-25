@@ -3,7 +3,7 @@ import Product from "../card/Product";
 import Modal from "../ui/Modal";
 import axios from "axios";
 
-const ProductSection = ({ products, categories }) => {
+const ProductSection = ({ products, categories, onDelete }) => {
     /*
         console.log("productos", products);
         console.log("categorías", categories);
@@ -72,6 +72,7 @@ const ProductSection = ({ products, categories }) => {
                 isOpen={isOpen}
                 onClose={() => setIsOpen(false)}
                 product={selectedProduct}
+                onDelete={onDelete}
             />
 
         </div>

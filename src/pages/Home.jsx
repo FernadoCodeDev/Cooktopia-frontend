@@ -1,14 +1,14 @@
-import React, {useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../layout/Header";
 import Main from "../layout/Main";
 import Footer from "../layout/Footer";
 import axios from "axios";
 
 export default function Home() {
-    const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
 
-   useEffect(() => {
+  useEffect(() => {
     fetch("/data.json")
       .then((res) => res.json())
       .then((data) => {
@@ -18,11 +18,18 @@ export default function Home() {
       .catch((err) => console.error("Error al leer JSON:", err));
   }, []);
 
+  const handleDelete = (id) => {
+    setProducts((prev) => prev.filter((p) => p.id !== id));
+  };
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <Main products={products}  categories={categories} />
+      <Main
+        products={products}
+        categories={categories}
+        onDelete={handleDelete}
+      />
       <Footer />
     </div>
   );

@@ -1,37 +1,27 @@
 import React from "react";
 import { router } from "@inertiajs/react";
+import { toast } from 'react-toastify';
 import ShoppingCart from "../../assets/svg/ShoppingCart";
 import Visa from "../../assets/svg/Visa";
 import MasterCard from "../../assets/svg/MasterCard";
 import Paypal from "../../assets/svg/Paypal";
 import Close from "../../assets/svg/Close";
-
 import EditButton from "../buttons/EditButton";
 import DeleteButton from "../buttons/DeleteButton";
 
-export default function Modal({ isOpen, onClose, product }) {
+export default function Modal({ isOpen, onClose, product, onDelete  }) {
   if (!isOpen || !product) return null;
 
   const Edit = () => {
-
     console.log(`Editar el producto con ID: ${product.id}`);
   };
 
-  const Delete = () => {
+  const handleDeleteClick = () => {
+    onDelete(product.id);  
+    toast.success(`El producto ${product.name} se ha eliminado :)`);
+    onClose();
+  };
 
-    if (window.confirm(`Esto eliminara "${product.name}" seguro?`)) {
-      router.delete(`/products/${product.id}`, {
-        onSuccess: () => {
-          onClose(); //  modal closed
-          //toast.success(`${product.name} Se ha eliminado`);
-        },
-        onError: (errors) => {
-          // toast.error("No se ha eliminado el producto");
-          console.error(errors);
-        },
-      });
-    }
-  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 text-center text-black bg-black bg-opacity-60">
@@ -88,7 +78,7 @@ export default function Modal({ isOpen, onClose, product }) {
             </div>
             <div className="flex flex-row gap-1">
               <EditButton product={product} onClick={onClose} />
-              <DeleteButton product={product} onClick={Delete} />
+              <DeleteButton product={product} onClick={handleDeleteClick} />
             </div>
           </div>
         </div>
