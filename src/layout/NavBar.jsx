@@ -1,6 +1,6 @@
 import React from "react";
 import CooktopiaShopLogo from "../assets/img/CooktopiaShop Logo.webp";
-import MobileMenu from "../component/ui/MobileMenu";
+import Nav from "../component/ui/Nav";
 import DarkMode from "../component/ui/DarkMode";
 
 const NavBar = () => {
@@ -20,7 +20,7 @@ const NavBar = () => {
                 </div>
 
                 <div className="">
-                    <MobileMenu
+                    <Nav
                         textColor="text-beige-950 transition-all duration-300 ease-out"
                         hoverColor="hover:text-stone-950"
                         bgColor="hover:bg-beige-100 transition-all duration-300 ease-out rounded-lg"
@@ -40,7 +40,7 @@ const NavBar = () => {
                 </div>
 
                 <div className="flex ">
-                    <MobileMenu
+                    <Nav
                         textColor="text-beige-950 transition-all duration-300 ease-out"
                         hoverColor="hover:text-stone-950"
                         bgColor="hover:bg-beige-100 transition-all duration-300 ease-out rounded-lg"

@@ -44,25 +44,25 @@ const MobileMenu = ({
       >
         <a
           href="/"
-          className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
+          className={`p-2 text-base md:text-lg font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
           Inicio
         </a>
         <a
           href="/"
-          className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
+          className={`p-2 text-base md:text-lg font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
           Productos
         </a>
         <a
           href="/"
-          className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
+          className={`p-2 text-base md:text-lg font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
           Categorías
         </a>
         <a
           href="/"
-          className={`p-2 text-[1rem] md:text-[2rem] font-bold ${bgColor} ${textColor} ${hoverColor}`}
+          className={`p-2 text-base md:text-lg font-bold ${bgColor} ${textColor} ${hoverColor}`}
         >
           Contacto
         </a>

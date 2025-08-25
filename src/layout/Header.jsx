@@ -9,7 +9,7 @@ const Header = () => {
         <div className="relative w-full ">
             {/* Design less than 768px */}
             <div
-                className="relative inset-0 flex flex-col w-full min-h-screen p-4 bg-center bg-cover md:hidden"
+                className="relative inset-0 flex flex-col w-full h-screen p-4 bg-center bg-cover md:hidden"
                 style={{ backgroundImage: `url(${CooktopiaShopBG})` }}
             >
                 <div className="relative z-10 flex flex-col justify-between h-screen pb-8">
@@ -34,18 +34,18 @@ const Header = () => {
                         />
                     </div>
 
-                    <div className="grid grid-cols-2 gap-1">
+                    <div className="grid grid-cols-1 gap-1 md:grid-cols-2">
 
-                        <h1 className="text-5xl font-bold text-center text-slate-100">
+                        <h1 className="text-3xl font-bold text-center text-slate-100">
                             COCINA
                         </h1>
 
-                        <p className="pt-2 text-sm text-start text-slate-100">
+                        <p className="pt-2 text-sm text-center md:text-start text-slate-100">
                             Descubre utensilios y herramientas que hacen que cocinar sea más fácil y rápido.
 
                         </p>
 
-                        <h1 className="col-span-3 text-5xl font-bold text-center text-slate-100">
+                        <h1 className="text-3xl font-bold text-center md:col-span-2 text-slate-100">
                             INTELIGENTE
                         </h1>
 
@@ -55,7 +55,7 @@ const Header = () => {
             </div>
 
             {/* design greater than md */}
-            <div className="hidden md:grid md:grid-cols-2 md:min-h-screen">
+            <div className="hidden md:grid md:grid-cols-2 md:h-screen">
                 {/* left side bg-beige-200 */}
 
                 <div className="flex flex-col items-start justify-between p-6 bg-beige-200">

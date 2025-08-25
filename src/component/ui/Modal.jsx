@@ -9,7 +9,7 @@ import Close from "../../assets/svg/Close";
 import EditButton from "../buttons/EditButton";
 import DeleteButton from "../buttons/DeleteButton";
 
-export default function Modal({ isOpen, onClose, product, onDelete  }) {
+export default function Modal({ isOpen, onClose, product, onDelete }) {
   if (!isOpen || !product) return null;
 
   const Edit = () => {
@@ -17,7 +17,7 @@ export default function Modal({ isOpen, onClose, product, onDelete  }) {
   };
 
   const handleDeleteClick = () => {
-    onDelete(product.id);  
+    onDelete(product.id);
     toast.success(`El producto ${product.name} se ha eliminado :)`);
     onClose();
   };
@@ -43,8 +43,7 @@ export default function Modal({ isOpen, onClose, product, onDelete  }) {
             <img
               src={`/image/${product.image}`}
               alt={product.name}
-              className="w-full h-auto m-auto max-w-64"
-            />
+              className="object-contain w-48 h-48 m-auto mt-16 md:mt-0 md:w-80 md:h-80" />
           </div>
 
           <div className="flex flex-col items-center justify-center grid-cols-1 gap-2 md:mt-24 ">
