@@ -2,6 +2,10 @@
 
 # COOKTOPIA SHOP 🛒
 
+**COOKTOPIA SHOP** es un **E-commerce especializado** en artículos de cocina, desarrollado como parte de una prueba técnica con el objetivo de construir una tienda en línea funcional inspirada en la experiencia de WooCommerce.
+
+Este repositorio corresponde a la versión **frontend estática**, donde los datos se gestionan mediante **JSON** y las operaciones del CRUD funcionan como **simulación**. Esto permite probar la interfaz y las funcionalidades del proyecto sin necesidad de un backend real.
+
 [![CooktopiaShop](https://img.shields.io/static/v1?message=Cooktopia-Shop&logo=shopee&label=&color=e2d9c8&logoColor=black&labelColor=&style=for-the-badge)](https://cooktopiashop.netlify.app/)
 <div align="left">
     
@@ -9,58 +13,38 @@
 ![React](https://img.shields.io/static/v1?message=React&logo=react&label=&color=61DAFB&logoColor=black&labelColor=&style=for-the-badge)
 ![tailwind](https://img.shields.io/static/v1?message=tailwindCSS&logo=tailwindcss&label=&color=06B6D4&logoColor=white&labelColor=&style=for-the-badge)
 ![vite](https://img.shields.io/static/v1?message=vite&logo=vite&label=&color=646CFF&logoColor=white&labelColor=&style=for-the-badge)
-![php](https://img.shields.io/static/v1?message=php&logo=php&label=&color=777BB4&logoColor=white&labelColor=&style=for-the-badge)
-![laravel](https://img.shields.io/static/v1?message=laravel&logo=laravel&label=&color=FF2D20&logoColor=white&labelColor=&style=for-the-badge)
-![mysql](https://img.shields.io/static/v1?message=mysql&logo=mysql&label=&color=4479A1&logoColor=white&labelColor=&style=for-the-badge)
 
 </div>  
 
+### Funcionalidades Principales
 
-<div align="left">
+- **Listado de productos:** se muestran los productos de manera estática desde JSON.
+  
+**CRUD simulado:**
+- **Create:** permite agregar productos, mostrando alertas con React-Toastify.
+- **Read:** muestra los productos en la página principal y permite filtrarlos por categoría.
+- **Update:** se puede actualizar la información de un producto, aunque los cambios no se guardan permanentemente.
+- **Delete:** al presionar el botón, el producto se oculta hasta que se recarga la página.
 
-  <img src="https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N3.png" alt="Vista Vertical" width="20%">
-  <img src="https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N2.png" alt="Vista Horizontal" width="71%">
+**Rutas:**
 
-</div>
+- `/  Página de inicio.`
+- `/CreatePage` Página de creación de nuevos productos.
+- `/products/{id}/edit` Página de actualización de productos.
 
-![N4](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N4.png)
-![N5](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N5.png)
+Esta versión permite visualizar y probar todas las funcionalidades del proyecto **COOKTOPIA SHOP** de forma estática, replicando la experiencia del proyecto con backend, aunque los cambios no se persisten después de recargar la página.
 
-![N6](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N6.png)
+---
 
-<div align="left">
+Esta versión de **COOKTOPIA SHOP** permite explorar la interfaz y las funcionalidades del proyecto de manera estática, simulando las operaciones del CRUD mediante **JSON** y mostrando alertas con **React-Toastify**.
 
-  <img src="https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N7.png" alt="Vista Horizontal" width="20.5%">
-  <img src="https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N8.png" alt="Vista Vertical" width="71%">
+Cabe destacar que existe otra versión del proyecto que **incluye backend completo con Laravel, PHP y MySQL**, donde las operaciones del CRUD se realizan de forma real y los datos se persisten en la base de datos. Para explorar esa versión más completa, puedes consultar el repositorio aquí:
 
-</div>
+[![CooktopiaShop-Backend-Repositorio](https://img.shields.io/static/v1?message=Cooktopia-Shop-Backend-Repositorio&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge)](https://github.com/FernadoCodeDev/Cooktopia-Backend)
 
-![N9](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N9.png)
-
-
-![N10](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N10.png)
-
-![N11](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N11.png)
-
-
-![N12](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N12.png)
-
-![N13](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N13.png)
-
-![N14](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N14.png)
-
-![N15](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N15.png)
-
-![N16](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N16.png)
-
-![N17](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N17.png)
-![N18](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N18.png)
-
-![N19](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N19.png)
-![N20](https://github.com/FernadoCodeDev/Cooktopia-frontend/blob/main/Readme/N20.png)
+Esta experiencia permite comprender el flujo completo de un E-commerce, desde la interacción del frontend hasta la gestión real de datos en el backend, ofreciendo una visión clara y práctica del desarrollo de **COOKTOPIA SHOP**.
 
 
-```
-php artisan serve
-```
+
+
 
