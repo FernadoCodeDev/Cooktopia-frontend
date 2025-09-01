@@ -9,10 +9,10 @@ const Header = () => {
         <div className="relative w-full ">
             {/* Design less than 768px */}
             <div
-                className="relative inset-0 flex flex-col w-full h-screen p-4 bg-center bg-cover md:hidden"
+                className="relative inset-0 flex flex-col w-full p-4 bg-center bg-cover h-dvh md:hidden"
                 style={{ backgroundImage: `url(${CooktopiaShopBG})` }}
             >
-                <div className="relative z-10 flex flex-col justify-between h-screen pb-8">
+                <div className="relative z-10 flex flex-col justify-between pb-8 h-dvh">
 
                     <div className="flex flex-row justify-between gap-2 ">
                         <img
