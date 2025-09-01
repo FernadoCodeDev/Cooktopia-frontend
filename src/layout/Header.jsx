@@ -55,7 +55,7 @@ const Header = () => {
             </div>
 
             {/* design greater than md */}
-            <div className="hidden md:grid md:grid-cols-2 md:h-screen">
+            <div className="hidden md:grid md:grid-cols-2 md:h-dvh">
                 {/* left side bg-beige-200 */}
 
                 <div className="flex flex-col items-start justify-between p-6 bg-beige-200">
