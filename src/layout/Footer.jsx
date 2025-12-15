@@ -28,7 +28,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             {" "}LandingMine
-          </a>, una colección de 19 landing pages con diferentes temáticas desarrolladas para
+          </a>, una colección de 13 landing pages con diferentes temáticas desarrolladas para
           mostrar conceptos de diseño y desarrollo web.
         </p>
       </div>
