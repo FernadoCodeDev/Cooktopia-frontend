@@ -44,12 +44,3 @@ Cabe destacar que existe otra versión del proyecto que **incluye backend comple
 [![CooktopiaShop-Backend-Repositorio](https://img.shields.io/static/v1?message=Cooktopia-Shop-Backend-Repositorio&logo=github&label=&color=181717&logoColor=white&labelColor=&style=for-the-badge)](https://github.com/FernandoMejiaDev/Cooktopia-Backend)
 
 Esta experiencia permite comprender el flujo completo de un E-commerce, desde la interacción del frontend hasta la gestión real de datos en el backend, ofreciendo una visión clara y práctica del desarrollo de **COOKTOPIA SHOP**.
-
-
-
-
-
-
-
-
-
